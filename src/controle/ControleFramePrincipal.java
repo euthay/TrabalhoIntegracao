@@ -61,7 +61,7 @@ public class ControleFramePrincipal implements ActionListener {
 			telaPrincipal.validate();
 		}
 	}
-	
+	//metodo Main
 	public static void main(String[] args) {
 		new ControleFramePrincipal();
 	}
