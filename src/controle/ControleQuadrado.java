@@ -2,6 +2,7 @@ package controle;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 
@@ -41,13 +42,15 @@ public class ControleQuadrado implements ActionListener {
 					quadrado = new Quadrado();
 					
 					quadrado.setLado(Double.valueOf(painelQuadrado.getValorLado()));
+					//Formato de numero
+					DecimalFormat formato = new DecimalFormat("0.##");
 					/* Formula de Área: A = L²
 					 * Formula de Volume V = L³
 					 * */
 					//Area
-					quadrado.setArea(Math.pow(quadrado.getLado(), 2));
+					quadrado.setArea(Double.valueOf(formato.format(Math.pow(quadrado.getLado(), 2))));
 					//Volume
-					quadrado.setVolume(Math.pow(quadrado.getLado(), 3));
+					quadrado.setVolume(Double.valueOf(formato.format(Math.pow(quadrado.getLado(), 3))));
 					//setando no painel
 					painelQuadrado.setLabelValorArea(String.valueOf(quadrado.getArea()));
 					painelQuadrado.setLabelVolume(String.valueOf(quadrado.getVolume()));
